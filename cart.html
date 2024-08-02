@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>All Products | TheRedStore</title>
+
+    <!--CSS Style Sheet Won't Work with absolute paths. Problem was solved by adding CSS embedded in HTML file  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+    href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css
+    >
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .nav {
+        flex: 1;
+        text-align: right;
+      }
+
+      nav ul {
+        display: inline-block;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #555;
+      }
+
+      p {
+        color: #555;
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .col-2 {
+        flex-basis: 50%;
+        min-width: 300px;
+      }
+
+      .col-2 img {
+        max-width: 100%;
+        padding: 50px 0;
+      }
+
+      .col-2 h1 {
+        font-size: 50px;
+        line-height: 60px;
+        margin: 25px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #ff523b;
+        color: #fff;
+        padding: 8px 30px;
+        margin: 30px 0;
+        border-radius: 30px;
+        transition: background 0.5s;
+      }
+
+      .header {
+        background: white;
+      }
+
+      .btn:hover {
+        background: #563434;
+      }
+      .header .row {
+        margin-top: 70px;
+      }
+
+      .categories {
+        margin: 65px 0;
+      }
+
+      .col-3 {
+        flex-basis: 30%;
+        min-width: 250px;
+        margin-bottom: 30px;
+      }
+
+      .col-3 img {
+        width: 100%;
+        margin: 40px;
+      }
+
+      .small-container {
+        max-width: 1080px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .col-4 {
+        flex-basis: 25%;
+        padding: 10px;
+        min-width: 200px;
+        margin-bottom: 50px;
+        transition: transform 0.5s;
+      }
+
+      .col-4 img {
+        width: 100%;
+      }
+
+      .title {
+        text-align: center;
+        margin: 0 auto 80px;
+        position: relative;
+        line-height: 60px;
+        color: #555;
+      }
+
+      .title::after {
+        content: "";
+        background: #ff523b;
+        width: 80px;
+        height: 5px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      h4 {
+        color: #555;
+        font-weight: normal;
+        
+      }
+
+      .col-4 p {
+        font-size: 14px;
+        position: auto;
+      }
+
+      .col-4:hover {
+        transform: translateY(-5px);
+      }
+
+      /*----offer----------------*/
+
+      .offer {
+        background: radial-gradient(#fff, #ffd6d6);
+        margin-top: 80px;
+        padding: 30px 0;
+      }
+
+      .col-2 .offer-img {
+        padding: 50px;
+      }
+
+      .small {
+        color: #555;
+      }
+
+      .move-text {
+        margin: 10px;
+      }
+
+      /*!-----testimonials-------------*/
+
+      .testimonial {
+        padding-top: 100px;
+      }
+
+      .testimonial .col-3 {
+        text-align: center;
+        padding: 40px 20px;
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.5s;
+      }
+
+      .testimonial .col-3 img {
+        width: 50px;
+        margin-top: 20px;
+        border-radius: 50%;
+      }
+
+      .testimonial .col-3:hover {
+        transform: translateY(-10px);
+      }
+
+      .font-sizing {
+        font-size: 12px;
+        margin: 12px 0;
+        color: #777;
+      }
+
+      .testimonial .col-3 h3 {
+        font-weight: 600;
+        color: #555;
+        font-size: 16px;
+      }
+
+      /*-------brands------*/
+
+      .brands {
+        margin: 100px auto;
+      }
+
+      .col-5 {
+        width: 160px;
+      }
+
+      .col-5 img {
+        width: 100%;
+        cursor: pointer;
+        filter: grayscale(100%);
+      }
+
+      .col-5 img:hover {
+        filter: grayscale(0);
+      }
+
+      /*-------footer--------*/
+
+      .footer {
+        background: #000;
+        color: #8a8a8a;
+        font-size: 14px;
+        padding: 60px 0 20px;
+      }
+
+      footer p {
+        color: #8a8a8a;
+      }
+
+      footer h3 {
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .footer-col-1,
+      .footer-col-2,
+      .footer-col-3,
+      .footer-col-4 {
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+
+      .footer-col-1 {
+        flex-basis: 30%;
+      }
+
+      .footer-col-2 {
+        flex: 1;
+        text-align: center;
+      }
+
+      .footer-col-2 img {
+        width: 180px;
+        margin-bottom: 20px;
+        margin-left: -25px;
+      }
+
+      .footer-col-3,
+      .footer-col-4 {
+        flex-basis: 12%;
+        text-align: center;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      .app-logo {
+        margin-top: 20px;
+      }
+
+      .app-logo img {
+        width: 140px;
+      }
+
+      .footer hr {
+        border: none;
+        background: #b5b5b5;
+        height: 1px;
+        margin: 20px 0;
+      }
+
+      .copyright {
+        text-align: center;
+      }
+
+      .menu-icon {
+        width: 28px;
+        margin-left: 20px;
+        display: none;
+      }
+
+      .row-2 {
+        justify-content: space-between;
+        margin: 100px auto 50px;
+      }
+
+      select {
+        border: 1px sold #ff523b;
+        padding: 5px;
+      }
+
+      select:focus {
+        outline: none;
+      }
+
+      .page-btn {
+        margin: 0 auto 80px;
+      }
+      .page-btn span {
+        display: inline-block;
+        border: 1px solid #ff523b;
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+      }
+
+      .page-btn span:hover {
+        background: #ff523b;
+        color: #fff;
+      }
+
+      /*---- single product details ------*/
+
+      .single-product {
+        margin-top: 80px;
+       
+      }
+
+      .single-product .col-2 img {
+        padding: 0;
+
+      }
+
+      .single-product .col-2 {
+        padding: 20px;
+      }
+
+      .single-product h4 {
+        margin: 20px 0;
+        font-size: 22px;
+        font-weight: bold;
+      }
+        .single-product select{
+            display: block;
+            padding: 10px;
+            margin-top: 20;
+        }
+
+        .single-product input{
+            width: 50px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 20px;
+            margin-right: 10px;
+            border: 1px solid #ff523b;
+        }
+
+        input:focus{
+            outline: none;
+        }
+
+        .title-space
+        {
+          margin-bottom: 20px;
+        
+        }
+
+        .small-img-row {
+          display: flex;
+          justify-content: space-between;
+
+        }
+
+        .small-img-col {
+          flex-basis: 24%;
+          cursor: pointer;
+        }
+
+        /* <------ cart items details--> */
+
+
+        .cart-page {
+            margin: 80px auto;
+
+        }
+
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+
+        .cart-info {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        th{
+            text-align: left;
+            padding: 5px;
+            color: #fff;
+            background: #ff523b;
+            font-weight: normal;
+
+        }
+
+
+        td{
+            padding: 10px 5px;
+
+        }
+
+
+        td input{
+            width: 40px;
+            height: 30px;
+            padding: 5px;
+        }
+
+
+        td a{
+            color: #ff523b;
+            font-size: 12px;
+
+        }
+
+        td img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+
+        }
+
+
+
+
+
+
+      
+
+
+
+
+
+
+      /*---- media query for menu for less then 600 px for mobile viewing------*/
+
+      @media only screen and (max-width: 800px) {
+        nav ul {
+          position: absolute;
+          top: 70px;
+          left: 0;
+          background: #333;
+          width: 100%;
+          overflow: hidden;
+          transition: max-height 0.5s;
+        }
+        nav ul li {
+          display: block;
+          margin-right: 50px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        nav ul li a {
+          color: #fff;
+        }
+        .menu-icon {
+          display: block;
+          cursor: pointer;
+        }
+      }
+
+      /*---- media query for small 600 screen size------*/
+      @media only screen and (max-width: 600px) {
+        .row {
+          text-align: center;
+        }
+        .col-2,
+        .col-3,
+        .col-4 {
+          flex-basis: 100%;
+        }
+        .single-product .row {
+          text-align: left;
+
+        }
+        .single-product .col-2 {
+          padding: 20px 0;
+        }
+        .single-product h1 {
+          font-size: 26px;
+          line-height: 32px;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="images/logo.png" alt="#" width="125px" />
+          </div>
+          <nav class="nav">
+            <ul id="MenuItems">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Account</a></li>
+            </ul>
+          </nav>
+          <img src="images/cart.png" width="30px" height="30px" />
+          <img
+            src="images/menu.png"
+            class="menu-icon"
+            onclick="menutoggle()"
+            alt="#"
+          />
+        </div>
+      </div>
+
+      <!------ cart items details-->
+
+      <div class="small-container cart-page">
+        <table>
+            <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            </tr>
+        
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="images/buy-1.jpg" alt="#">
+                        <div>
+                            <p>Red Printed Tshirt</p>
+                            <small>Price: $50.00</small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                
+                    
+                    <td><input type="number" value="1"></td>
+                    <td>$50.00</td>
+            </tr>
+            </table>
+            
+
+      </div>
+
+
+
+      
+     
+    <!------footer------>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download Our App For IOS and Android</p>
+            <div class="app-logo">
+              <img src="images/play-store.png" alt="#" />
+              <img src="images/app-store.png" alt="#" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images/logo-white.png" alt="#" />
+            <p>
+              Our Purpose Is To Sustainably Make the Pleasure and Benefits of
+              Sports Accessible to the Many
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Posts</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-col-4">
+          <h3>Follow Us</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>X</li>
+            <li>Instagram</li>
+            <li>Youtube</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <p class="copyright">
+        Copyright 2024 by David Morris. All rights reserved.
+      </p>
+    </div>
+    <!----javascript baby for toggle menu-->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

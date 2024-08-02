@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Tech & Gadgets Restoration</title>
+
+    <!--CSS Style Sheet Won't Work with absolute paths. Problem was solved by adding CSS embedded in HTML file  -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .nav {
+    flex: 1;
+    text-align: right;
+  }
+
+  nav ul {
+    display: inline-block;
+    list-style-type: none;
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  p {
+    color: black;
+  }
+
+  .container {
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .col-2 {
+    flex-basis: 50%;
+    min-width: 300px;
+  }
+
+  .col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+  }
+
+  .col-2 h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+  }
+
+  .btn {
+    display: inline-block;
+    background: blue;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+  }
+
+  .header {
+    background: radial-gradient(lightblue, blue);
+  }
+
+  .btn:hover {
+    background: lightblue;
+  }
+  .header .row {
+    margin-top: 70px;
+  }
+
+  .categories {
+    margin: 65px 0;
+  }
+
+  .col-3 {
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+  }
+
+  .col-3 img {
+    width: 100%;
+    margin: 40px;
+  }
+
+  .small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .col-4 {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+  }
+
+  .col-4 img {
+    width: 100%;
+  }
+
+  .title {
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: black;
+  }
+
+  .title::after {
+    content: "";
+    background: blue;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  h4 {
+    color: #555;
+    font-weight: normal;
+  }
+
+  .col-4 p {
+    font-size: 14px;
+    position: auto;
+  }
+
+  .col-4:hover {
+    transform: translateY(-5px);
+  }
+
+  /*----offer----------------*/
+
+  .offer {
+    background: radial-gradient(#fff, lightblue);
+    margin-top: 80px;
+    padding: 30px 0;
+  }
+
+  .col-2 .offer-img {
+    padding: 50px;
+  }
+
+  .small {
+    color: #555;
+  }
+
+  .move-text {
+    margin: 10px;
+  }
+
+  /*!-----testimonials-------------*/
+
+  .testimonial {
+    padding-top: 100px;
+  }
+
+  .testimonial .col-3 {
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+
+  .testimonial .col-3 img {
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+  }
+
+  .testimonial .col-3:hover {
+    transform: translateY(-10px);
+  }
+
+  .font-sizing {
+    font-size: 12px;
+    margin: 12px 0;
+    color: #777;
+  }
+
+  .testimonial .col-3 h3 {
+    font-weight: 600;
+    color: #555;
+    font-size: 16px;
+  }
+
+  /*-------brands------*/
+
+  .brands {
+    margin: 100px auto;
+  }
+
+  .col-5 {
+    width: 160px;
+  }
+
+  .col-5 img {
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+  }
+
+  .col-5 img:hover {
+    filter: grayscale(0);
+  }
+
+  /*-------footer--------*/
+
+  .footer {
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+  }
+
+  footer p {
+    color: #8a8a8a;
+  }
+
+  footer h3 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .footer-col-1,
+  .footer-col-2,
+  .footer-col-3,
+  .footer-col-4 {
+    min-width: 250px;
+    margin-bottom: 20px;
+  }
+
+  .footer-col-1 {
+    flex-basis: 30%;
+  }
+
+  .footer-col-2 {
+    flex: 1;
+    text-align: center;
+  }
+
+  
+  .footer-col-2 img {
+        width: 180px;
+        margin-bottom: 20px;
+        margin-left: -70px;
+      }
+
+  .footer-col-3,
+  .footer-col-4 {
+    flex-basis: 12%;
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .app-logo {
+    margin-top: 20px;
+  }
+
+  .app-logo img {
+    width: 140px;
+  }
+
+  .footer hr {
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+  }
+
+  .copyright {
+    text-align: center;
+  }
+
+  .menu-icon {
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+  }
+
+  .move-text {
+    text-align: center;
+    margin-left: 20px;
+  }
+
+  .col-7{
+      justify-items: center;
+      align-items: center;
+      margin: 50px;
+    }
+
+    .sub-text {
+      align-items: center;
+      justify-items: center;
+      margin: 25px;
+    }
+
+  
+
+  /*---- media query for menu------*/
+
+  @media only screen and (max-width: 800px) {
+    nav ul {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background: #333;
+      width: 100%;
+      overflow: hidden;
+      transition: max-height 0.5s;
+    }
+    nav ul li {
+      display: block;
+      margin-right: 50px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    nav ul li a {
+      color: #fff;
+    }
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  /*---- media query for small 600 screen size------*/
+  @media only screen and (max-width: 600px) {
+    .row {
+      text-align: center;
+    }
+    .col-2,
+    .col-3,
+    .col-4 {
+      flex-basis: 100%;
+    }
+
+    .col-7{
+      justify-items: center;
+      align-items: center;
+      margin: 50px;
+    }
+    .footer-col-2 img {
+        width: 180px;
+        margin-bottom: 20px;
+        margin-left: -30px;
+      }
+
+     
+
+  }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="iCloud Images for t&g/tglogo.png" alt="#" width="125px" />
+          </div>
+          <nav class="nav">
+            <ul id="MenuItems">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="payments.html">Payments</a></li>
+            </ul>
+          </nav>
+
+          <img
+            src="images/menu.png"
+            class="menu-icon"
+            onclick="menutoggle()"
+            alt="#"
+          />
+        </div>
+        <div class="row">
+          <div class="col-2">
+            <h1>
+              Welcome To <br />
+              Our Store
+            </h1>
+            <p class="font-size">
+              Use Code NEXTGEN For 30% Off Everything Untill The Release Of The Nintendo
+              Switch's Successor. <br>
+
+            </br>Here at Tech & Gadgets Restoration We were here to help you get
+              the most out of your devices and help you money on electronics!
+            </p>
+            
+            <a href="products.html" class="btn">Explore Now &#8594;</a>
+          </div>
+
+          <div class="col-2">
+            <img src="iCloud Images for t&g/IMG_0912.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-------- featured products-------->
+    <div class="small-container">
+      <h2 class="title">Custom Controllers</h2>
+      <p class="sub-text">
+        Introducing Our Custom Designs Exclusively Done By Us. Power Up Your
+        Gaming With A New Look.
+      </p>
+
+      <div class="row">
+        <div class="col-4">
+          <a href="product-details.html">
+            <img src="iCloud Images for t&g/IMG_0928.jpg" alt="#" />
+          </a>
+          <h4>Custom Purple Nintendo Switch Joycons</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative. Instead of adding a class to the div to edit color in css, color code was added to fill element--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+          </div>
+          <p>$99.99</p>
+        </div>
+        <div class="col-4">
+          <a href="product-details2.html">
+            <img src="iCloud Images for t&g/IMG_0743.JPG" alt="#" />
+          </a>
+
+          <h4>Custom Blue Nintendo Switch Joycons</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+
+            <div class="ratingcolor">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <p>$99.99</p>
+        </div>
+        <div class="col-4">
+          <a href="product-details-3.html"
+            ><img src="iCloud Images for t&g/IMG_0400.jpg" alt="#" />
+          </a>
+
+          <h4>Custom Gold Nintendo Switch Joycons</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$99.99</p>
+        </div>
+        <div class="col-4">
+          <a href="product-details4.html"
+            ><img src="iCloud Images for t&g/IMG_0442.jpg" alt="#" />
+          </a>
+
+          <h4>Custom Clear Nintendo Switch Joycons</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$99.99</p>
+        </div>
+      </div>
+      <!-------- latest products-------->
+      <h2 class="title">Our Refurbished Consoles</h2>
+      <p class="sub-text" >Our expertly refurbished systems ensure you experience the thrill of gaming like never before.</p>
+      <div class="row">
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1545.jpg" alt="#" />
+          <h4>Nintendo Switch Lite turquoise</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative. Instead of adding a class to the div to edit color in css, color code was added to fill element--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$159.99</p>
+        </div>
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1543.jpg" alt="#" />
+          <h4>Nintendo Switch Lite Yellow</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+
+            <div class="ratingcolor">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <p>$159.99</p>
+        </div>
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1546.jpg" alt="#" />
+          <h4>Nintendo Switch Lite Coral Pink</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$159.99</p>
+        </div>
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1547.jpg" alt="#" />
+          <h4>Nintendo Switch Lite blue</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$159.99</p>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <img src="iCloud Images for t&g/IMG_1512.jpg" alt="#" />
+            <a href="#">
+              <h4>Nintendo Switch OLED</h4>
+            </a>
+
+            <div class="rating">
+              <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative. Instead of adding a class to the div to edit color in css, color code was added to fill element--->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="25px"
+                fill="#ff523b"
+              >
+                <path
+                  d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+                />
+              </svg>
+            </div>
+            <p>$249.99</p>
+          </div>
+          <div class="col-4">
+            <img src="iCloud Images for t&g/IMG_1548.jpg" alt="#" />
+            <h4>Nintendo Switch</h4>
+            <div class="rating">
+              <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+
+              <div class="ratingcolor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#ff523b"
+                >
+                  <path
+                    d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#ff523b"
+                >
+                  <path
+                    d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#ff523b"
+                >
+                  <path
+                    d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#ff523b"
+                >
+                  <path
+                    d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#ff523b"
+                >
+                  <path
+                    d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <p>$199.99</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!----offer-->
+    <div class="offer">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-2">
+            <img
+              src="https://t4.ftcdn.net/jpg/02/63/90/39/360_F_263903901_9Hhil3Oj59jQRfk9vahhMtY0fqR554G4.jpg"
+              alt="#"
+              class="offer-img"
+            />
+          </div>
+          <div class="col-2">
+            <p>Exclusively On Tech & Gadgets</p>
+            <h1>Tech Repair Service</h1>
+            <small class="offer-text">
+              We Offer Our Restoration Services Available For Our Customers Why
+              Not Just Throw It Away Or Get A New One! Let The Professional
+              Bring It Back To Life At The Best Prices Noone Can Beat!
+            </small>
+            <a href="#" class="btn">Coming Soon! &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-----testimonials------------->
+    <div class="testimonial">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m228-240 92-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 23-5.5 42.5T458-480L320-240h-92Zm360 0 92-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 23-5.5 42.5T818-480L680-240h-92ZM320-500q25 0 42.5-17.5T380-560q0-25-17.5-42.5T320-620q-25 0-42.5 17.5T260-560q0 25 17.5 42.5T320-500Zm360 0q25 0 42.5-17.5T740-560q0-25-17.5-42.5T680-620q-25 0-42.5 17.5T620-560q0 25 17.5 42.5T680-500Zm0-60Zm-360 0Z"
+              />
+            </svg>
+
+            <p class="font-sizing">
+              Great seller , fast shipping .
+            </p>
+            <div class="rating">
+              <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="25px"
+                viewBox="0 -960 960 960"
+                width="25px"
+                fill="#ff523b"
+              >
+                <path
+                  d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+                />
+              </svg>
+            </div>
+            
+            <a href="https://www.ebay.com/usr/edwpi_96">
+            <img src="https://i.ebayimg.com/images/g/q68AAOSw1MBlliiN/s-l140.webp" />
+            <h3>edwpi_96</h3>
+          </a>
+          
+          </div>
+          <div class="col-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m228-240 92-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 23-5.5 42.5T458-480L320-240h-92Zm360 0 92-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 23-5.5 42.5T818-480L680-240h-92ZM320-500q25 0 42.5-17.5T380-560q0-25-17.5-42.5T320-620q-25 0-42.5 17.5T260-560q0 25 17.5 42.5T320-500Zm360 0q25 0 42.5-17.5T740-560q0-25-17.5-42.5T680-620q-25 0-42.5 17.5T620-560q0 25 17.5 42.5T680-500Zm0-60Zm-360 0Z"
+              />
+            </svg>
+
+            <p class="font-sizing">
+              This seller was extremely communicative and up front about shipping and delivery updates! Would definitely buy from this seller again! 
+            </p>
+            <div class="rating">
+              <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="25px"
+                viewBox="0 -960 960 960"
+                width="25px"
+                fill="#ff523b"
+              >
+                <path
+                  d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+                />
+              </svg>
+            </div>
+            <a href="https://www.mercari.com/u/384312237/reviews/" >
+            <img src="https://u-mercari-images.mercdn.net/images/member_photo_noimage_v2.png?width=1024&height=1024&format=pjpg&auto=webp&fit=crop" >
+          </a>
+            <h3>ljervis2016</h3>
+          </div>
+          <div class="col-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m228-240 92-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 23-5.5 42.5T458-480L320-240h-92Zm360 0 92-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 23-5.5 42.5T818-480L680-240h-92ZM320-500q25 0 42.5-17.5T380-560q0-25-17.5-42.5T320-620q-25 0-42.5 17.5T260-560q0 25 17.5 42.5T320-500Zm360 0q25 0 42.5-17.5T740-560q0-25-17.5-42.5T680-620q-25 0-42.5 17.5T620-560q0 25 17.5 42.5T680-500Zm0-60Zm-360 0Z"
+              />
+            </svg>
+
+            <p class="font-sizing">
+              as described, arrived quickly and packed well, great price
+            </p>
+            <div class="rating">
+              <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="25px"
+                viewBox="0 -960 960 960"
+                width="25px"
+                fill="#ff523b"
+              >
+                <path
+                  d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+                />
+              </svg>
+            </div>
+            <a href="https://www.ebay.com/usr/mkitchen207">
+            <img src="https://i.ebayimg.com/images/g/1CwAAOSwHzZkSqkK/s-l140.webp" />
+            <h3 class="move-text">mkitchen207</h3>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-------- brands------->
+
+    <h1 class=col-7>Secure Payment Processing Provided By:</h1>
+    <div class="brands">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-5">
+            <img
+              src="data:image/png;base64,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"
+              alt="#"
+            />
+          </div>
+          <div class="col-5">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB6YnQoM78NCEw3f--iWcGhpQFjBxfo9k6fw&s"
+              alt="Cash App"
+              alt="#"
+            />
+          </div>
+          <div class="col-5">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7oa6-WXok1YXYt8GN4CWbzJOpeBf69159Q&s"
+              alt="#"
+            />
+          </div>
+          <div class="col-5">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNqIqC4H_dkySVOgFXFbOyBdYYg56e-4O96A&s"
+              alt="Affirm logo"
+            />
+          </div>
+          <div class="col-5">
+            <img
+src="data:image/png;base64,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"              alt="Nintendo"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------footer------>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Thanks For Checking Us Out!</h3>
+            <p>We Hope You Enjoy Our Products <p>
+            <div class="app-logo">
+              
+            </div>
+          </div>
+          <div class="footer-col-2">
+            
+          </div>
+          </div>
+          <div class="footer-col-3">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Instagram</li>
+              <li>X</li>
+              <li>Facebook</li>
+              <li>Pinterest</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <p class="copyright">
+        Copyright 2024 by David Morris. All rights reserved.
+      </p>
+    </div>
+    <!----javascript baby for toggle menu-->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+  </body>
+</html>

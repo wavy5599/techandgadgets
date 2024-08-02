@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Product2</title>
+
+    <!--CSS Style Sheet Won't Work with absolute paths. Problem was solved by adding CSS embedded in HTML file  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+    href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css
+    >
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .nav {
+        flex: 1;
+        text-align: right;
+      }
+
+      nav ul {
+        display: inline-block;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      p {
+        color: black;
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .col-2 {
+        flex-basis: 50%;
+        min-width: 300px;
+      }
+
+      .col-2 img {
+        max-width: 100%;
+        padding: 50px 0;
+      }
+
+      .col-2 h1 {
+        font-size: 50px;
+        line-height: 60px;
+        margin: 25px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background: blue;
+        color: #fff;
+        padding: 8px 30px;
+        margin: 30px 0;
+        border-radius: 30px;
+        transition: background 0.5s;
+      }
+
+      .header {
+        background: white;
+      }
+
+      .btn:hover {
+        background: lightblue;
+      }
+      .header .row {
+        margin-top: 70px;
+      }
+
+      .categories {
+        margin: 65px 0;
+      }
+
+      .col-3 {
+        flex-basis: 30%;
+        min-width: 250px;
+        margin-bottom: 30px;
+      }
+
+      .col-3 img {
+        width: 100%;
+        margin: 40px;
+      }
+
+      .small-container {
+        max-width: 1080px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .col-4 {
+        flex-basis: 25%;
+        padding: 10px;
+        min-width: 200px;
+        margin-bottom: 50px;
+        transition: transform 0.5s;
+      }
+
+      .col-4 img {
+        width: 100%;
+      }
+
+      .title {
+        text-align: center;
+        margin: 0 auto 80px;
+        position: relative;
+        line-height: 60px;
+        color: black;
+      }
+
+      .title::after {
+        content: "";
+        background: black;
+        width: 80px;
+        height: 5px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      h4 {
+        color: black;
+        font-weight: normal;
+        
+      }
+
+      .col-4 p {
+        font-size: 14px;
+        position: auto;
+      }
+
+      .col-4:hover {
+        transform: translateY(-5px);
+      }
+
+      /*----offer----------------*/
+
+      .offer {
+        background: radial-gradient(#fff, #ffd6d6);
+        margin-top: 80px;
+        padding: 30px 0;
+      }
+
+      .col-2 .offer-img {
+        padding: 50px;
+      }
+
+      .small {
+        color: #555;
+      }
+
+      .move-text {
+        margin: 10px;
+      }
+
+      /*!-----testimonials-------------*/
+
+      .testimonial {
+        padding-top: 100px;
+      }
+
+      .testimonial .col-3 {
+        text-align: center;
+        padding: 40px 20px;
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.5s;
+      }
+
+      .testimonial .col-3 img {
+        width: 50px;
+        margin-top: 20px;
+        border-radius: 50%;
+      }
+
+      .testimonial .col-3:hover {
+        transform: translateY(-10px);
+      }
+
+      .font-sizing {
+        font-size: 12px;
+        margin: 12px 0;
+        color: #777;
+      }
+
+      .testimonial .col-3 h3 {
+        font-weight: 600;
+        color: #555;
+        font-size: 16px;
+      }
+
+      /*-------brands------*/
+
+      .brands {
+        margin: 100px auto;
+      }
+
+      .col-5 {
+        width: 160px;
+      }
+
+      .col-5 img {
+        width: 100%;
+        cursor: pointer;
+        filter: grayscale(100%);
+      }
+
+      .col-5 img:hover {
+        filter: grayscale(0);
+      }
+
+      /*-------footer--------*/
+
+      .footer {
+        background: #000;
+        color: #8a8a8a;
+        font-size: 14px;
+        padding: 60px 0 20px;
+      }
+
+      footer p {
+        color: #8a8a8a;
+      }
+
+      footer h3 {
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .footer-col-1,
+      .footer-col-2,
+      .footer-col-3,
+      .footer-col-4 {
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+
+      .footer-col-1 {
+        flex-basis: 30%;
+      }
+
+      .footer-col-2 {
+        flex: 1;
+        text-align: center;
+      }
+
+      .footer-col-2 img {
+        width: 180px;
+        margin-bottom: 20px;
+        margin-left: -60px;
+      }
+
+      .footer-col-3,
+      .footer-col-4 {
+        flex-basis: 12%;
+        text-align: center;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      .app-logo {
+        margin-top: 20px;
+      }
+
+      .app-logo img {
+        width: 140px;
+      }
+
+      .footer hr {
+        border: none;
+        background: #b5b5b5;
+        height: 1px;
+        margin: 20px 0;
+      }
+
+      .copyright {
+        text-align: center;
+      }
+
+      .menu-icon {
+        width: 28px;
+        margin-left: 20px;
+        display: none;
+      }
+
+      .row-2 {
+        justify-content: space-between;
+        margin: 100px auto 50px;
+      }
+
+      select {
+        border: 1px sold #ff523b;
+        padding: 5px;
+      }
+
+      select:focus {
+        outline: none;
+      }
+
+      .page-btn {
+        margin: 0 auto 80px;
+      }
+      .page-btn span {
+        display: inline-block;
+        border: 1px solid #ff523b;
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+      }
+
+      .page-btn span:hover {
+        background: #ff523b;
+        color: #fff;
+      }
+
+      /*---- single product details ------*/
+
+      .single-product {
+        margin-top: 80px;
+       
+      }
+
+      .single-product .col-2 img {
+        padding: 0;
+
+      }
+
+      .single-product .col-2 {
+        padding: 20px;
+      }
+
+      .single-product h4 {
+        margin: 20px 0;
+        font-size: 22px;
+        font-weight: bold;
+      }
+        .single-product select{
+            display: block;
+            padding: 10px;
+            margin-top: 20;
+        }
+
+        .single-product input{
+            width: 50px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 20px;
+            margin-right: 10px;
+            border: 1px solid blue;
+        }
+
+        input:focus{
+            outline: none;
+        }
+
+        .title-space
+        {
+          margin-bottom: 20px;
+        
+        }
+
+        .small-img-row {
+          display: flex;
+          justify-content: space-between;
+
+        }
+
+        .small-img-col {
+          flex-basis: 24%;
+          cursor: pointer;
+        }
+
+
+      
+
+
+
+
+
+
+      /*---- media query for menu for less then 600 px for mobile viewing------*/
+
+      @media only screen and (max-width: 800px) {
+        nav ul {
+          position: absolute;
+          top: 70px;
+          left: 0;
+          background: #333;
+          width: 100%;
+          overflow: hidden;
+          transition: max-height 0.5s;
+        }
+        nav ul li {
+          display: block;
+          margin-right: 50px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        nav ul li a {
+          color: #fff;
+        }
+        .menu-icon {
+          display: block;
+          cursor: pointer;
+        }
+      }
+
+      /*---- media query for small 600 screen size------*/
+      @media only screen and (max-width: 600px) {
+        .row {
+          text-align: center;
+        }
+        .col-2,
+        .col-3,
+        .col-4 {
+          flex-basis: 100%;
+        }
+        .single-product .row {
+          text-align: left;
+
+        }
+        .single-product .col-2 {
+          padding: 20px 0;
+        }
+        .single-product h1 {
+          font-size: 26px;
+          line-height: 32px;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            
+            <a href="index.html">
+              <img src="iCloud Images for t&g/tglogo.png" alt="#" width="125px" />
+              </a>
+          </div>
+          <nav class="nav">
+            <ul id="MenuItems">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="payments.html">Payments</a></li>
+            </ul>
+          </nav>
+          <img src="images/cart.png" width="30px" height="30px" />
+          <img
+            src="images/menu.png"
+            class="menu-icon"
+            onclick="menutoggle()"
+            alt="#"
+          />
+        </div>
+      </div>
+
+      <!-----single product details-->
+      <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+               <img src="iCloud Images for t&g/IMG_0743.JPG" alt="#" width="100%" id="ProductImg"> 
+
+               <div class="small-img-row">
+               <div class="small-img-col">
+                <img src="iCloud Images for t&g/IMG_0743.JPG" alt="#" width="100%" class="small-img">
+               </div>
+               <div class="small-img-col">
+                <img src="iCloud Images for t&g/IMG_0744.JPG" alt="#" width="100%" class="small-img">
+               
+               </div>
+               <div class="small-img-col">
+                <img src="iCloud Images for t&g/IMG_0745.JPG" alt="#" width="100%" class="small-img">
+                  </div>
+               <div class="small-img-col">
+                <img src="iCloud Images for t&g/IMG_0738.png" alt="#" width="100%" class="small-img">
+                </div>
+                
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+            <div class="col-2">
+                <p>Home / Custom Controllers</p>
+                <h1> Custom Blue Nintendo Switch Joycons</h1>
+                    <h4>$99.99</h4>
+                    
+
+                    
+                    <input type="number" value="1">
+                    
+                    <a href="https://buy.stripe.com/dR67uh2L5aD9fm08wB" class="btn">Buy Now</a>
+
+                    <h3 class="title-space">Product Details</h3>
+                    <p>Introducing the ultimate customization for your Nintendo Switch gaming experience: Custom Blue Joy-Cons. Elevate your gameplay with these meticulously crafted controllers, designed to seamlessly integrate with your console and reflect your unique style.
+
+                      Each Custom Blue Joy-Con undergoes a precision painting process, ensuring a flawless finish that not only looks stunning but also feels smooth to the touch. <br>
+                      
+                    </br>Whether you're playing solo or engaging in multiplayer battles, these Joy-Cons provide ergonomic comfort and responsive controls, enhancing your gaming performance.
+                      
+                      Stand out from the crowd with a vibrant shade of blue that adds a splash of personality to your Nintendo Switch setup. Perfect for gamers who appreciate quality craftsmanship and attention to detail, these custom controllers are a testament to both style and functionality. <br>
+                      
+                  </br> Compatible with all Nintendo Switch consoles, Custom Blue Joy-Cons are the ideal choice for gamers looking to customize their gaming setup without compromising on performance. Treat yourself to a gaming accessory that not only looks great but also enhances your gaming experience every time you pick up your Switch.</p>
+            </div>
+        </div>
+      </div>
+     
+      <!------ title ------->
+
+
+      <div class="small-container">
+        <div class="row row-2">
+          <h2>Related Products</h2>
+          
+         <a href="products.html"> <p>View More</p>
+        </a>
+          
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <!-----products------>
+
+
+
+    
+
+    <div class="small-container">
+      <div class="row">
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1547.jpg" alt="#" />
+          <h4>Nintendo Switch Lite Blue</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative. Instead of adding a class to the div to edit color in css, color code was added to fill element--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$159.99</p>
+        </div>
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1513.jpg" alt="#" />
+          <h4>Nintendo Switch OLED</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+
+            <div class="ratingcolor">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <p>$249.99</p>
+        </div>
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1546.jpg" alt="#" />
+          <h4>Nintendo Switch Lite Coral Pink</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$159.99</p>
+        </div>
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1548.jpg" alt="#" />
+          <h4>Nintendo Switch</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$199.99</p>
+        </div>
+      </div>
+    </div>
+
+    <!------footer------>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Thanks For Checking Us Out!</h3>
+            <p>We Hope You Enjoy Our Products <p>
+            <div class="app-logo">
+              
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="iCloud Images for t&g/tglogo.png" alt="#" />
+           
+          </div>
+          <div class="footer-col-3">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Instagram</li>
+              <li>X</li>
+              <li>Facebook</li>
+              <li>Pinterest</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <!----javascript baby for toggle menu-->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+
+
+<!------ js for product gallery---->
+
+<script>
+
+var ProductImg = document.getElementById("ProductImg");
+var SmallImg = document.getElementsByClassName("small-img");
+
+SmallImg[0].onclick = function() 
+{
+
+  ProductImg.src = SmallImg[0].src;
+
+}
+
+SmallImg[1].onclick = function() 
+{
+
+  ProductImg.src = SmallImg[1].src;
+
+}
+
+SmallImg[2].onclick = function() 
+{
+
+  ProductImg.src = SmallImg[2].src;
+
+}
+
+SmallImg[3].onclick = function() 
+{
+
+  ProductImg.src = SmallImg[3].src;
+
+}
+
+</script>
+
+
+
+
+
+  </body>
+</html>

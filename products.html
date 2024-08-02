@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>All Products</title>
+
+    <!--CSS Style Sheet Won't Work with absolute paths. Problem was solved by adding CSS embedded in HTML file  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+    href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css
+    >
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .nav {
+        flex: 1;
+        text-align: right;
+      }
+
+      nav ul {
+        display: inline-block;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #555;
+      }
+
+      p {
+        color: #555;
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .col-2 {
+        flex-basis: 50%;
+        min-width: 300px;
+      }
+
+      .col-2 img {
+        max-width: 100%;
+        padding: 50px 0;
+      }
+
+      .col-2 h1 {
+        font-size: 50px;
+        line-height: 60px;
+        margin: 25px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #ff523b;
+        color: #fff;
+        padding: 8px 30px;
+        margin: 30px 0;
+        border-radius: 30px;
+        transition: background 0.5s;
+      }
+
+      .header {
+        background: radial-gradient(lightblue, blue);
+      }
+
+      .btn:hover {
+        background: #563434;
+      }
+      .header .row {
+        margin-top: 70px;
+      }
+
+      .categories {
+        margin: 65px 0;
+      }
+
+      .col-3 {
+        flex-basis: 30%;
+        min-width: 250px;
+        margin-bottom: 30px;
+      }
+
+      .col-3 img {
+        width: 100%;
+        margin: 40px;
+      }
+
+      .small-container {
+        max-width: 1080px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .col-4 {
+        flex-basis: 25%;
+        padding: 10px;
+        min-width: 200px;
+        margin-bottom: 50px;
+        transition: transform 0.5s;
+      }
+
+      .col-4 img {
+        width: 100%;
+      }
+
+      .title {
+        text-align: center;
+        margin: 0 auto 80px;
+        position: relative;
+        line-height: 60px;
+        color: #555;
+      }
+
+      .title::after {
+        content: "";
+        background: #ff523b;
+        width: 80px;
+        height: 5px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      h4 {
+        color: #555;
+        font-weight: normal;
+      }
+
+      .col-4 p {
+        font-size: 14px;
+        position: auto;
+      }
+
+      .col-4:hover {
+        transform: translateY(-5px);
+      }
+
+      /*----offer----------------*/
+
+      .offer {
+        background: radial-gradient(#fff, #ffd6d6);
+        margin-top: 80px;
+        padding: 30px 0;
+      }
+
+      .col-2 .offer-img {
+        padding: 50px;
+      }
+
+      .small {
+        color: #555;
+      }
+
+      .move-text {
+        margin: 10px;
+      }
+
+      /*!-----testimonials-------------*/
+
+      .testimonial {
+        padding-top: 100px;
+      }
+
+      .testimonial .col-3 {
+        text-align: center;
+        padding: 40px 20px;
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.5s;
+      }
+
+      .testimonial .col-3 img {
+        width: 50px;
+        margin-top: 20px;
+        border-radius: 50%;
+      }
+
+      .testimonial .col-3:hover {
+        transform: translateY(-10px);
+      }
+
+      .font-sizing {
+        font-size: 12px;
+        margin: 12px 0;
+        color: #777;
+      }
+
+      .testimonial .col-3 h3 {
+        font-weight: 600;
+        color: #555;
+        font-size: 16px;
+      }
+
+      /*-------brands------*/
+
+      .brands {
+        margin: 100px auto;
+      }
+
+      .col-5 {
+        width: 160px;
+      }
+
+      .col-5 img {
+        width: 100%;
+        cursor: pointer;
+        filter: grayscale(100%);
+      }
+
+      .col-5 img:hover {
+        filter: grayscale(0);
+      }
+
+      /*-------footer--------*/
+
+      .footer {
+        background: #000;
+        color: #8a8a8a;
+        font-size: 14px;
+        padding: 60px 0 20px;
+      }
+
+      footer p {
+        color: #8a8a8a;
+      }
+
+      footer h3 {
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .footer-col-1,
+      .footer-col-2,
+      .footer-col-3,
+      .footer-col-4 {
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+
+      .footer-col-1 {
+        flex-basis: 30%;
+      }
+
+      .footer-col-2 {
+        flex: 1;
+        text-align: center;
+      }
+
+      .footer-col-2 img {
+        width: 180px;
+        margin-bottom: 20px;
+        margin-left: -30px;
+      }
+      .footer-col-3,
+      .footer-col-4 {
+        flex-basis: 12%;
+        text-align: center;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      .app-logo {
+        margin-top: 20px;
+      }
+
+      .app-logo img {
+        width: 140px;
+      }
+
+      .footer hr {
+        border: none;
+        background: #b5b5b5;
+        height: 1px;
+        margin: 20px 0;
+      }
+
+      .copyright {
+        text-align: center;
+      }
+
+      .menu-icon {
+        width: 28px;
+        margin-left: 20px;
+        display: none;
+      }
+
+      .row-2 {
+        justify-content: space-between;
+        margin: 100px auto 50px;
+      }
+
+      select {
+        border: 1px sold #ff523b;
+        padding: 5px;
+      }
+
+      select:focus {
+        outline: none;
+      }
+
+      .page-btn{
+        margin: 0 auto 80px;
+      }
+      .page-btn span {
+        display: inline-block;
+        border: 1px solid lightblue;
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+
+      }
+
+      .page-btn span:hover{
+        background: blue;
+        color: #fff;
+      }
+
+      /*---- media query for menu------*/
+
+      @media only screen and (max-width: 800px) {
+        nav ul {
+          position: absolute;
+          top: 70px;
+          left: 0;
+          background: #333;
+          width: 100%;
+          overflow: hidden;
+          transition: max-height 0.5s;
+        }
+        nav ul li {
+          display: block;
+          margin-right: 50px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        nav ul li a {
+          color: #fff;
+        }
+        .menu-icon {
+          display: block;
+          cursor: pointer;
+        }
+      }
+
+      /*---- media query for small 600 screen size------*/
+      @media only screen and (max-width: 600px) {
+        .row {
+          text-align: center;
+        }
+        .col-2,
+        .col-3,
+        .col-4 {
+          flex-basis: 100%;
+        }
+
+        .footer-col-2 {
+        width: 180px;
+        margin-bottom: 20px;
+        margin-left: 0px;
+      }
+        }
+      
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+
+            <a href="index.html"><img src="iCloud Images for t&g/tglogo.png" alt="#" width="125px" />
+            </a>
+            
+            
+          </div>
+          <nav class="nav">
+            <ul id="MenuItems">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="payments.html">Payments</a></li>
+            </ul>
+          </nav>
+          </nav>
+          
+          
+          
+          <img
+            src="images/menu.png"
+            class="menu-icon"
+            onclick="menutoggle()"
+            alt="#"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="small-container">
+      <div class="row row-2">
+        <h2>All Products</h2>
+        <select>
+          <option>Default Sorting</option>
+          <option>Sort by price</option>
+          <option>Sort by Popularity</option>
+          <option>Sort by Rating</option>
+          <option>Sort by Sale</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          <a href="product-details-3.html">
+          <img src="iCloud Images for t&g/IMG_0408.jpg" alt="#" />
+        </a>
+          <h4>Golden Nintendo Switch Joy-Cons</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative. Instead of adding a class to the div to edit color in css, color code was added to fill element--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$99.99</p>
+        </div>
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1513.jpg" alt="#" />
+          <h4>Nintendo Switch OLED</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+
+            <div class="ratingcolor">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <p>$249.99</p>
+        </div>
+        <div class="col-4">
+          <a href="product-details.html">
+          <img src="iCloud Images for t&g/IMG_0929.jpg" alt="#" />
+        </a>
+          <h4>Custom Purple Nintendo Switch Joycons</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$99.99</p>
+        </div>
+        <div class="col-4">
+          <a href="product-details2.html">
+          <img src="iCloud Images for t&g/IMG_0926.JPG" alt="#" />
+        </a>
+          <h4>Custom Blue Nintendo Switch Joy-Cons</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$99.99</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1543.jpg" alt="#" />
+          <h4>Nintendo Switch Lite Yellow</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative. Instead of adding a class to the div to edit color in css, color code was added to fill element--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$149.99</p>
+        </div>
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1547.jpg" alt="#" />
+          <h4>Nintendo Switch Lite Blue</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+
+            <div class="ratingcolor">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <p>$149.99</p>
+        </div>
+        <div class="col-4">
+          <img src="iCloud Images for t&g/IMG_1545.jpg" alt="#" />
+          <h4>Nintendo Switch Lite turquoise</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$149.99</p>
+        </div>
+        <div class="col-4">
+          <a href="product-details4.html">
+          <img src="iCloud Images for t&g/IMG_0442.jpg" alt="#" />
+        </a>
+          <h4>Custom Clear Nintendo Switch Joy-Cons</h4>
+          <div class="rating">
+            <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative--->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ff523b"
+            >
+              <path
+                d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              viewBox="0 -960 960 960"
+              width="25px"
+              fill="#ff523b"
+            >
+              <path
+                d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+              />
+            </svg>
+          </div>
+          <p>$99.99</p>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <img src="iCloud Images for t&g/IMG_1007.JPG" alt="#" />
+            <h4>6ft USB C Charging Cable</h4>
+            <div class="rating">
+              <!---Awesome fonts absolute link could not be displayed. Google fonts is the alterative. Instead of adding a class to the div to edit color in css, color code was added to fill element--->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#ff523b"
+              >
+                <path
+                  d="m384-334 96-74 96 74-36-122 90-64H518l-38-124-38 124H330l90 64-36 122ZM233-120l93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Zm247-369Z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="25px"
+                viewBox="0 -960 960 960"
+                width="25px"
+                fill="#ff523b"
+              >
+                <path
+                  d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z"
+                />
+              </svg>
+            </div>
+            <p>$10.99</p>
+          </div>
+
+
+          <!------>
+          
+        <div class="page-btn">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>&#8594;</span>
+        
+        </div>
+    </div>
+
+    <!------footer------>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Thanks For Checking Us Out!</h3>
+            <p>We Hope You Enjoy Our Products <p>
+            <div class="app-logo">
+              
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="iCloud Images for t&g/tglogo.png" alt="#" />
+           
+          </div>
+          <div class="footer-col-3">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Instagram</li>
+              <li>X</li>
+              <li>Facebook</li>
+              <li>Pinterest</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <!----javascript baby for toggle menu-->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+  </body>
+</html>
