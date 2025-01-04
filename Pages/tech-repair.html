@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Contact Us</title>
+   <link rel="stylesheet" href="../Pages/Stylesheets/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link rel="stylesheet"
+    href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnH2N2Pr5NXBlSiilpWvD2Ht5FMs6CElP+htJqGaHZkK/QjZRIu9Mc2SoxW97xIPiZ53/lI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="../images/tglogo.png">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="../index.html"> <img src="../images/tglogo.png" alt="#" width="125px">
+          </div>
+          <nav class="nav">
+            <ul id="MenuItems">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Pages/products.html">Products</a></li>
+              <li><a href="../Pages/about.html">About</a></li>
+              <li><a href="../Pages/contact.html">Contact</a></li>
+              <li><a href="../Pages/payments.html">Payments</a></li>
+            </ul>
+          </nav>
+          <img
+            src="Pages-images/menu copy.png"
+            class="menu-icon"
+            onclick="menutoggle()"
+            alt="#"
+          />
+        </div>
+        <div class="contact-form">
+          <h2>Fill out the ticket to submit a repair </h2>
+          <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="fc46354a-fc16-4272-b00f-f7b76ca733d1">
+              <label for="name">Your Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+              <label for="email">Your Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              <label for="question">What is wrong with your device?:</label>
+              <textarea id="question" name="question" rows="2" placeholder="Write your Inquiry here..." required></textarea>
+              <label for="kind-of-device">What kind of device do you need fixed?</label>
+              <input type="text">
+              <button type="submit">Submit</button>
+              <p class="terms-conditions-link">By submitting this form, you agree to our <a href="../Pages/about.html">Terms and Conditions</a>.</p>
+          </form>
+      </div>
+             <!-- Footer Section -->
+    <footer>
+        <h2>Thanks for checking us out!</h2>
+        <ul class="social-icons">
+            <li><a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+    </footer>
+    <!----javascript baby for toggle menu-->
+    <script src="../JS/index.js"></script>
+  </body>
+</html>

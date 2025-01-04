@@ -124,6 +124,18 @@ footer h2 {
     color: #007BFF;
 }
 
+.terms-conditions-link {
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+.terms-conditions-link a {
+ color: blue;
+ text-decoration: underline;
+}
+
+
+
 /*---- media query for smaller screens ------*/
 @media only screen and (max-width: 800px) {
   nav ul {
