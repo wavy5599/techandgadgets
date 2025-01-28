@@ -41,18 +41,19 @@
         <div class="contact-form">
           <h2>Fill out the ticket to submit a repair </h2>
           <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="fc46354a-fc16-4272-b00f-f7b76ca733d1">
-              <label for="name">Your Name:</label>
-              <input type="text" id="name" name="name" placeholder="Enter your name" required>
-              <label for="email">Your Email:</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required>
-              <label for="question">What is wrong with your device?:</label>
-              <textarea id="question" name="question" rows="2" placeholder="Write your Inquiry here..." required></textarea>
-              <label for="kind-of-device">What kind of device do you need fixed?</label>
-              <input type="text">
-              <button type="submit">Submit</button>
-              <p class="terms-conditions-link">By submitting this form, you agree to our <a href="../Pages/about.html#terms-and-conditions">Terms and Conditions</a>.</p>
-          </form>
+            <input type="hidden" name="access_key" value="fc46354a-fc16-4272-b00f-f7b76ca733d1">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="question">What is wrong with your device?:</label>
+                <textarea id="question" name="question" rows="2" placeholder="Write your Inquiry here..." required></textarea>
+                <label for="device" id="device" name="device">What kind of device do you need fixed?</label>
+                <input  for="device" id="device" name="device" type="text">
+                <button type="submit">Submit</button>
+                <p class="terms-conditions-link">By submitting this form, you agree to our <a href="../Pages/about.html#terms-and-conditions">Terms and Conditions</a>.</p>
+            </form>
+        
       </div>
              <!-- Footer Section -->
     <footer>
@@ -68,3 +69,5 @@
     <script src="../JS/index.js"></script>
   </body>
 </html>
+
+
