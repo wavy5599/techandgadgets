@@ -1,3 +1,4 @@
+// Code for controlling menu icon 
 var MenuItems = document.getElementById("MenuItems");
 MenuItems.style.maxHeight = "0px";
 function menutoggle() {
@@ -8,7 +9,7 @@ function menutoggle() {
   }
 }
 
-// Code for selecting diffrent images in product details 
+// Code for selecting images in product details 
 
 var ProductImg = document.getElementById("ProductImg");
 var SmallImg = document.getElementsByClassName("small-img");
